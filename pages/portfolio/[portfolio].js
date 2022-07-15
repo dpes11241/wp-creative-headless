@@ -10,7 +10,7 @@ export default function PortfolioDetail() {
   const router = useRouter()
   const { portfolio } = (router.query)
 
-  const { data, error } = useSWR(`http://headless-wp.test/wp-json/wp/v2/portfolio/` + `${portfolio}`, fetcher)
+  const { data, error } = useSWR(`https://headless.naphix.com/wp-json/wp/v2/portfolio/` + `${portfolio}`, fetcher)
   if (error) return <div>failed to load</div>
   if (!data) return <div>loading...</div>
 

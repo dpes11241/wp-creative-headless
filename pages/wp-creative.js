@@ -35,7 +35,7 @@ export default function wpcreative( {posts} ){
 
 export async function getStaticProps(){
 
-  const res = await fetch('http://headless-wp.test/graphql', {
+  const res = await fetch('https://headless.naphix.com/graphql', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

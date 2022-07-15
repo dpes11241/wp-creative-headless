@@ -6,7 +6,7 @@ const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 
 export default function Profile () {
-    const { data, error } = useSWR('http://headless-wp.test//wp-json/acf/v2/options', fetcher)
+    const { data, error } = useSWR('https://headless.naphix.com//wp-json/acf/v2/options', fetcher)
 
     if (error) return <div>failed to load</div>
     if (!data) return <div>loading...</div>

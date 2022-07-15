@@ -17,71 +17,12 @@ const Home = ({ datas, portData, error }) => {
     return <div>An error occured: {error.message}</div>;
   }
 
-  function ACF_Flexible() {
-    return (
-      <>
-        {datas.map(data => (
-          <div key={data.id}>
-
-            {data.acf.flexible_blocks.map(item => (
-              <div key={item.acf_fc_layout}>
-                {item.acf_fc_layout === "orange_block" ? (
-                  <>
-                    {/* ORANGE BLOCK STARTS */}
-                    <div className="repair-off-shore">
-                      <div className="container">
-                        <div className="title-section">
-                          {/* <h2>White Label Solution for Agencies</h2> */}
-                          <h2>{item.title}</h2>
-                        </div>
-                        <div className="repair-off-shore-content">
-                          <div className="white-label-subtitle">Are you looking for skilled WordPress developers to backup your
-                            digital agency?</div>
-                          <p>With over 12 years of WordPress experience, we can code your designs to a fully secured, fast, SEO
-                            friendly and responsive WordPress website with your label on it. In addition, we can be an extension of
-                            your in-house team working on your website projects and provide your clients with ongoing maintenance
-                            and technical support.</p>
-                            {/* { <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(comment.rendered) }} /> } */}
-                          <a className="hvr-ripple-out" href="white-label/">Learn More</a>
-                        </div>
-                      </div>
-                    </div>
-                    {/* ORANGE BLOCK ENDS */}
-                  </>
-                ) : (item.acf_fc_layout === "gray_block") ? (
-                  <>
-                    {/* GRAY BLOCK STARTS */}
-                    <div className="why-us-section">
-                      <div className="container">
-                        <div className="title-section">
-                          <h2>WordPress Developer Sydney</h2>
-                        </div>
-                        <div className="about-cta">
-                          <p>WP Creative is an Australian owned and operated, Sydney based boutique WordPress Agency. As WordPress specialists, we build high quality and affordable websites for businesses that are modern, fast, secure, SEO friendly and easy to manage.</p>
-                          <p>Whether a simple brochure website or a complex online store, we have built all kinds of websites using WordPress, the World’s most popular open-source CMS platform. We also offer WordPress Web Design Sydney, ongoing support and WordPress maintenance services for your WordPress websites so you can focus on the business and get the peace of mind you deserve.</p>
-                          <p>In addition, we have been helping some of Sydney’s top digital agencies as a white-label development team to build websites for their clients. We offer a dedicated team for agencies looking to grow and want to get support from a reliable team at a fraction of cost. We can also collaborate on a project basis if you need additional resources for overflow WordPress projects.</p>
-                          <p>If you are looking for a WordPress development partner in Sydney for your business or digital agency, please reach out to one of our local WordPress Developer Sydney to discuss your needs. We would be delighted to be your WordPress Development partner and provide you with ongoing support to build, maintain and optimise your websites in Sydney and Australia-wide.</p>
-                        </div>
-                      </div>
-                    </div>
-                    {/* GRAY BLOCK ENDS */}
-                  </>
-                ) : ''}
-              </div>
-            ))}
-
-          </div>
-        ))}
-      </>
-    )
-  }
-
 
 
 
   return (
     <div>
-      <ACF_Flexible />
+
       {datas.map(data => (
         <div key={data.id}>
           {/* BANNER STARTS */}
@@ -98,6 +39,7 @@ const Home = ({ datas, portData, error }) => {
                 <div className="col-md-7 col-sm-6">
                   <div className="banner-image">
                     <Image width="650" height="450" alt="img" src={data.acf.banner_image.url}></Image>
+                    { data.acf.banner_image.url ? 'yes' : 'no' }
                   </div>
                 </div>
               </div>
@@ -207,9 +149,9 @@ const Home = ({ datas, portData, error }) => {
 
 Home.getInitialProps = async ctx => {
   try {
-    const res = await axios.get('http://headless-wp.test/wp-json/wp/v2/pages?slug="wp-creative"');
     // const res = await axios.get('https://headless.naphix.com/wp-json/wp/v2/pages?slug="wp-creative"');
-    const portfolio = await axios.get('http://headless-wp.test/wp-json/wp/v2/portfolio/');
+    const res = await axios.get('https://headless.naphix.com/wp-json/wp/v2/pages?slug="wp-creative"');
+    const portfolio = await axios.get('https://headless.naphix.com/wp-json/wp/v2/portfolio/');
     const datas = res.data;
     const portData = portfolio.data;
     return { datas, portData };

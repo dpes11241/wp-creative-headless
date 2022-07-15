@@ -2,7 +2,7 @@ import useSWR from 'swr'
 import DOMPurify  from 'dompurify'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
-const COMMENTS_URL = 'http://headless-wp.test/wp-json/wp/v2/widgets?sidebar=wp-menu'
+const COMMENTS_URL = 'https://headless.naphix.com/wp-json/wp/v2/widgets?sidebar=wp-menu'
 
 
 const CommentsList = (props) => {

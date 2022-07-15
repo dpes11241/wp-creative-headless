@@ -23,7 +23,7 @@ console.log( {books} );
 
 Home.getInitialProps = async ctx => {
   try {
-    const res = await axios.get('http://headless-wp.test/wp-json/wp/v2/books');
+    const res = await axios.get('https://headless.naphix.com/wp-json/wp/v2/books');
     const books = res.data;
     return { books };
   } catch (error) {

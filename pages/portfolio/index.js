@@ -5,7 +5,7 @@ import Link from 'next/link'
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Portfolio() {
-  var { data, error } = useSWR('http://headless-wp.test/wp-json/wp/v2/portfolio/', fetcher)
+  var { data, error } = useSWR('https://headless.naphix.com/wp-json/wp/v2/portfolio/', fetcher)
   if (error) return <div>failed to load</div>
   if (!data) return <div>loading...</div>
 
