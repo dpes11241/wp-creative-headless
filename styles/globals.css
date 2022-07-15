@@ -15967,3 +15967,22 @@ span.typed {
 .why-us-section {
     padding-bottom: 80px;
 }
+.textwidget svg {
+  width: 20px;
+  color: #fff;
+  height: 25px;
+}
+
+.textwidget svg path {
+  fill: #fff;
+}
+
+.textwidget ul {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textwidget ul li a {
+  padding: 8px;
+}
