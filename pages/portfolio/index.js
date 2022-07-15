@@ -10,7 +10,7 @@ export default function Portfolio() {
   if (!data) return <div>loading...</div>
 
   return (
-    <div>
+    <div className='portfolio-wrap'>
         { data.map( elem => {
            return(
             <div key ={elem.id}>
