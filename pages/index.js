@@ -39,7 +39,7 @@ const Home = ({ datas, portData, error }) => {
                 <div className="col-md-7 col-sm-6">
                   <div className="banner-image">
                     <Image width="650" height="450" alt="img" src={data.acf.banner_image.url}></Image>
-                    { data.acf.banner_image.url ? 'yes' : 'no' }
+                    {/* { data.acf.banner_image.url ? 'yes' : 'no' } */}
                   </div>
                 </div>
               </div>
