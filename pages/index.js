@@ -165,7 +165,7 @@ const Home = ({ datas, portData, error }) => {
                         <div className="overlay"></div>
                         {/* {data.acf.portfolio_image} */}
                         {/* <Image width="650" height="450" alt="img" src={data.acf.portfolio_image}></Image> */}
-                        <img src={data.acf.portfolio_image} />
+                        {/* <img src={data.acf.portfolio_image} /> */}
                         {/* <a href="https://www.wpcreative.com.au/portfolio/the-optical-co/ " className="btn">
                                   <p className="itemtitle">{data.title.rendered}</p>
                                   <p className="itemsubtitle"></p>
