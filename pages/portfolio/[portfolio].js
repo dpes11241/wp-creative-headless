@@ -39,7 +39,10 @@ export default function PortfolioDetail() {
                 />
                   {/* <Link  passHref> */}
                     {/* <a className="hvr-ripple-out external" >Live Preview</a> */}
-                    <a target="_blank" rel="noreferrer" href={data.acf.detail_page.detail_page_url.url} className="hvr-ripple-out external" > {data.acf.detail_page.detail_page_url.title} </a>
+                    {data.acf.detail_page.detail_page_url.url ? (
+                       <a target="_blank" rel="noreferrer" href={data.acf.detail_page.detail_page_url.url} className="hvr-ripple-out external" > {data.acf.detail_page.detail_page_url.title ? data.acf.detail_page.detail_page_url.title : 'Live Preview' } </a>
+                    ) : ''}
+
                   {/* </Link> */}
                   </div>
               </div>
