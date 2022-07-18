@@ -27,8 +27,7 @@ const Portfolio = ({ portData, error }) => {
               <p><br/>As we mostly work as a white label partner for agencies, most of our projects are bound by an NDA <br/>so we can only showcase a few WordPress sites here.</p>
               <p>We have built websites for a range of companies from high-traffic media agencies to start-ups using WordPress. <br/>We love WordPress for its ease of use, community support and endless possibilities for customisation.</p>
           </div>
-      </div>
-      <div className="row">
+          <div className="row">
                 {portData.map(data => (
                   <div key={data.id}>
                     <div className="col-md-4 col-sm-4 col-xs-6 portfolioItem">
@@ -56,6 +55,8 @@ const Portfolio = ({ portData, error }) => {
                   </div>
                 ))}
               </div>
+      </div>
+
     </div>
 
 
