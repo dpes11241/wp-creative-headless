@@ -10,13 +10,12 @@ import { useState, useEffect } from "react";
 import DOMPurify from 'dompurify'
 
 const Home = ({ datas, portData, error }) => {
-  // console.log(portData);
-  console.log(datas)
+  console.log(portData);
+  // console.log(datas)
 
   if (error) {
     return <div>An error occured: {error.message}</div>;
   }
-
 
 
 
@@ -76,7 +75,26 @@ const Home = ({ datas, portData, error }) => {
             </div>
           </div>
           {/* BOUTIQUE ENDS */}
-
+          {/* ORANGE BLOCK STARTS */}
+          <div className="repair-off-shore">
+            <div className="container">
+              <div className="title-section">
+                {/* <h2>White Label Solution for Agencies</h2> */}
+                <h2>White Label Solution for Agencies</h2>
+              </div>
+              <div className="repair-off-shore-content">
+                <div className="white-label-subtitle">Are you looking for skilled WordPress developers to backup your
+                  digital agency?</div>
+                <p>With over 12 years of WordPress experience, we can code your designs to a fully secured, fast, SEO
+                  friendly and responsive WordPress website with your label on it. In addition, we can be an extension of
+                  your in-house team working on your website projects and provide your clients with ongoing maintenance
+                  and technical support.</p>
+                {/* { <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(comment.rendered) }} /> } */}
+                <a className="hvr-ripple-out" href="white-label/">Learn More</a>
+              </div>
+            </div>
+          </div>
+          {/* ORANGE BLOCK ENDS */}
 
           {/* PORTFOLIO STARTS */}
           <div id="portfolioEvents">
@@ -106,7 +124,7 @@ const Home = ({ datas, portData, error }) => {
                       <div className="portfolioItemWrap">
                         <div className="overlay"></div>
                         {/* {data.acf.portfolio_image} */}
-                        {/* <Image width="650" height="450" alt="img" src={data.acf.portfolio_image}></Image> */}
+                        <Image src={data.acf.portfolio_image} width="650" height="450" alt="img"></Image>
                         {/* <img src={data.acf.portfolio_image} /> */}
                         {/* <a href="https://www.wpcreative.com.au/portfolio/the-optical-co/ " className="btn">
                                   <p className="itemtitle">{data.title.rendered}</p>
@@ -139,26 +157,7 @@ const Home = ({ datas, portData, error }) => {
           </div>
           {/* PORTFOLIO ENDS */}
 
-          {/* ORANGE BLOCK STARTS */}
-          <div className="repair-off-shore">
-            <div className="container">
-              <div className="title-section">
-                {/* <h2>White Label Solution for Agencies</h2> */}
-                <h2>White Label Solution for Agencies</h2>
-              </div>
-              <div className="repair-off-shore-content">
-                <div className="white-label-subtitle">Are you looking for skilled WordPress developers to backup your
-                  digital agency?</div>
-                <p>With over 12 years of WordPress experience, we can code your designs to a fully secured, fast, SEO
-                  friendly and responsive WordPress website with your label on it. In addition, we can be an extension of
-                  your in-house team working on your website projects and provide your clients with ongoing maintenance
-                  and technical support.</p>
-                {/* { <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(comment.rendered) }} /> } */}
-                <a className="hvr-ripple-out" href="white-label/">Learn More</a>
-              </div>
-            </div>
-          </div>
-          {/* ORANGE BLOCK ENDS */}
+
 
           {/* GRAY BLOCK STARTS */}
           <div className="why-us-section">

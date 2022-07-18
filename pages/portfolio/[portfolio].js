@@ -1,5 +1,6 @@
 import React from 'react'
 import useSWR from 'swr'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -16,8 +17,33 @@ export default function PortfolioDetail() {
 
   return (
     <div>
-      {data.title.rendered} <br/>
-      {data.acf.intro_subtitle}
-    </div>
+      <div className="pdTitle">
+          <div className="container">
+              <div className="row">
+                  <h1> {data.title.rendered} </h1>
+                  <p>{data.acf.intro_subtitle}</p>
+              </div>
+          </div>
+      </div>
+
+      <div className="pdTitle pdBanner">
+          <div className="container">
+              <div className="row">
+                  <h2>Project Overview</h2>
+                  <p>For Vision of Humanity, our goal was to create a simple, lightweight, and fully responsive website. This will help the organisation achieve its long-term aim of being the leading source of information on peace and development. Interactive global maps, current news and articles, downloadable content/resources, and a donation page are all available on the website.</p>
+                  <Image
+                  src={data.acf.detail_page.detail_image.url}
+                  alt="Picture"
+                  width={1207}
+                  height={583}
+                />
+                  {/* <Link  passHref> */}
+                    {/* <a className="hvr-ripple-out external" >Live Preview</a> */}
+                    <a target="_blank" href={data.acf.detail_page.detail_page_url.url} className="hvr-ripple-out external" > {data.acf.detail_page.detail_page_url.title} </a>
+                  {/* </Link> */}
+                  </div>
+              </div>
+          </div>
+      </div>
   )
 }
